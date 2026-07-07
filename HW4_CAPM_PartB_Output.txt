@@ -1,0 +1,42 @@
+HW4 PART B — STOCK #3 BETA VERIFICATION
+
+Stock #3: ADP 
+
+Covariance between ADP excess return and market excess return:
+[1] 0.000272168
+
+Variance of market excess return:
+[1] 0.0003210752
+
+Beta calculated by hand:
+Beta = Cov(ADP excess, market excess) / Var(market excess)
+Beta = 0.000272168 / 0.0003210752 
+Beta = 0.8476769 
+
+Beta from regression = 0.8476769 
+
+Difference = 3.330669e-16 
+
+Conclusion: The covariance/variance calculation matches the CAPM regression slope.
+
+Full ADP regression summary:
+
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.048671 -0.016534  0.000571  0.014021  0.068964 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   0.000807   0.001881   0.429    0.669    
+market_excess 0.847677   0.105338   8.047 2.13e-13 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.0235 on 154 degrees of freedom
+Multiple R-squared:  0.296,	Adjusted R-squared:  0.2915 
+F-statistic: 64.76 on 1 and 154 DF,  p-value: 2.125e-13
+
