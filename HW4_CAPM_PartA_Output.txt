@@ -1,0 +1,266 @@
+HW4 PART A — CAPM RESULTS
+
+CAPM model:
+stock excess return = alpha + beta * market excess return + error
+
+Decision rule:
+Alpha p-value > 0.05: fail to reject alpha = 0; CAPM is consistent.
+Alpha p-value <= 0.05: reject alpha = 0; CAPM is rejected.
+
+Summary table:
+
+ Stock        Alpha   Alpha_SE   Alpha_t  Alpha_p     Beta  Beta_SE   Beta_t      Beta_p CAPM_Holds
+  AAPL  0.003847378 0.00505330  0.761359 0.447607 1.384640 0.282916  4.89417 2.46707e-06        Yes
+  ADBE  0.004658172 0.00488867  0.952851 0.342159 1.531350 0.273699  5.59503 9.83468e-08        Yes
+   ADP  0.000807008 0.00188149  0.428918 0.668582 0.847677 0.105338  8.04721 2.12501e-13        Yes
+   AMD -0.000618633 0.00591394 -0.104606 0.916825 2.323827 0.331100  7.01850 6.70106e-11        Yes
+  DELL  0.008883858 0.00410593  2.163663 0.032032 1.674992 0.229876  7.28650 1.54760e-11         No
+   GTW -0.005425335 0.00562370 -0.964727 0.336194 2.232802 0.314850  7.09163 4.50383e-11        Yes
+    HP  0.001900414 0.00364550  0.521304 0.602904 0.875234 0.204098  4.28830 3.16503e-05        Yes
+   IBM  0.002625623 0.00239801  1.094916 0.275263 1.347923 0.134256 10.03995 1.46673e-18        Yes
+  MSFT  0.004255549 0.00292814  1.453327 0.148168 1.458539 0.163936  8.89700 1.46895e-15        Yes
+  ORCL  0.003910500 0.00443944  0.880855 0.379769 1.567604 0.248548  6.30706 2.86815e-09        Yes
+                                          CAPM_Decision
+         Consistent with CAPM: fail to reject alpha = 0
+         Consistent with CAPM: fail to reject alpha = 0
+         Consistent with CAPM: fail to reject alpha = 0
+         Consistent with CAPM: fail to reject alpha = 0
+ CAPM rejected: alpha is significantly different from 0
+         Consistent with CAPM: fail to reject alpha = 0
+         Consistent with CAPM: fail to reject alpha = 0
+         Consistent with CAPM: fail to reject alpha = 0
+         Consistent with CAPM: fail to reject alpha = 0
+         Consistent with CAPM: fail to reject alpha = 0
+
+
+FULL REGRESSION SUMMARIES
+
+--------------------------------------------------
+Stock: AAPL 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.34283 -0.03469  0.00059  0.04127  0.13958 
+
+Coefficients:
+              Estimate Std. Error t value   Pr(>|t|)    
+(Intercept)   0.003847   0.005053   0.761      0.448    
+market_excess 1.384640   0.282916   4.894 0.00000247 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.06311 on 154 degrees of freedom
+Multiple R-squared:  0.1346,	Adjusted R-squared:  0.129 
+F-statistic: 23.95 on 1 and 154 DF,  p-value: 0.000002467
+
+
+--------------------------------------------------
+Stock: ADBE 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.283534 -0.030261 -0.001063  0.037842  0.279150 
+
+Coefficients:
+              Estimate Std. Error t value     Pr(>|t|)    
+(Intercept)   0.004658   0.004889   0.953        0.342    
+market_excess 1.531350   0.273699   5.595 0.0000000983 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.06106 on 154 degrees of freedom
+Multiple R-squared:  0.1689,	Adjusted R-squared:  0.1635 
+F-statistic:  31.3 on 1 and 154 DF,  p-value: 0.00000009835
+
+
+--------------------------------------------------
+Stock: ADP 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.048671 -0.016534  0.000571  0.014021  0.068964 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   0.000807   0.001881   0.429    0.669    
+market_excess 0.847677   0.105338   8.047 2.13e-13 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.0235 on 154 degrees of freedom
+Multiple R-squared:  0.296,	Adjusted R-squared:  0.2915 
+F-statistic: 64.76 on 1 and 154 DF,  p-value: 2.125e-13
+
+
+--------------------------------------------------
+Stock: AMD 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.18401 -0.05395  0.00271  0.04456  0.22268 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -0.0006186  0.0059139  -0.105    0.917    
+market_excess  2.3238266  0.3311000   7.019  6.7e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.07386 on 154 degrees of freedom
+Multiple R-squared:  0.2423,	Adjusted R-squared:  0.2374 
+F-statistic: 49.26 on 1 and 154 DF,  p-value: 6.701e-11
+
+
+--------------------------------------------------
+Stock: DELL 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.130095 -0.034672 -0.005478  0.031146  0.144670 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   0.008884   0.004106   2.164    0.032 *  
+market_excess 1.674992   0.229876   7.286 1.55e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.05128 on 154 degrees of freedom
+Multiple R-squared:  0.2564,	Adjusted R-squared:  0.2515 
+F-statistic: 53.09 on 1 and 154 DF,  p-value: 1.548e-11
+
+
+--------------------------------------------------
+Stock: GTW 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.34129 -0.04027 -0.00050  0.04580  0.15814 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -0.005425   0.005624  -0.965    0.336    
+market_excess  2.232802   0.314850   7.092  4.5e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.07024 on 154 degrees of freedom
+Multiple R-squared:  0.2462,	Adjusted R-squared:  0.2413 
+F-statistic: 50.29 on 1 and 154 DF,  p-value: 4.504e-11
+
+
+--------------------------------------------------
+Stock: HP 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.16160 -0.03139  0.00166  0.02960  0.16355 
+
+Coefficients:
+              Estimate Std. Error t value  Pr(>|t|)    
+(Intercept)   0.001900   0.003645   0.521     0.603    
+market_excess 0.875234   0.204098   4.288 0.0000317 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.04553 on 154 degrees of freedom
+Multiple R-squared:  0.1067,	Adjusted R-squared:  0.1009 
+F-statistic: 18.39 on 1 and 154 DF,  p-value: 0.00003165
+
+
+--------------------------------------------------
+Stock: IBM 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.127164 -0.016156 -0.001343  0.016443  0.098727 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   0.002626   0.002398   1.095    0.275    
+market_excess 1.347923   0.134256  10.040   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.02995 on 154 degrees of freedom
+Multiple R-squared:  0.3956,	Adjusted R-squared:  0.3917 
+F-statistic: 100.8 on 1 and 154 DF,  p-value: < 2.2e-16
+
+
+--------------------------------------------------
+Stock: MSFT 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.164996 -0.021283 -0.000428  0.018500  0.124533 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   0.004256   0.002928   1.453    0.148    
+market_excess 1.458539   0.163936   8.897 1.47e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.03657 on 154 degrees of freedom
+Multiple R-squared:  0.3395,	Adjusted R-squared:  0.3352 
+F-statistic: 79.16 on 1 and 154 DF,  p-value: 1.469e-15
+
+
+--------------------------------------------------
+Stock: ORCL 
+--------------------------------------------------
+
+Call:
+lm(formula = stock_y ~ market_excess)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.185847 -0.026401 -0.005691  0.027723  0.184559 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   0.003910   0.004439   0.881     0.38    
+market_excess 1.567604   0.248548   6.307 2.87e-09 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.05545 on 154 degrees of freedom
+Multiple R-squared:  0.2053,	Adjusted R-squared:  0.2001 
+F-statistic: 39.78 on 1 and 154 DF,  p-value: 2.868e-09
+
